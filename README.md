@@ -1,2 +1,2 @@
-# Yu-Lua-TeX-Utils
+# Yu Lua TeX Utils
 
