@@ -1,0 +1,47 @@
+% ==============================================================================
+% Yu's Collaboration & Annotation Macros
+% ==============================================================================
+
+
+% Load essential packages
+%% Extended color support
+\usepackage[dvipsnames, table]{xcolor}
+%% For strike-through (\sout)
+\usepackage[normalem]{ulem}
+%% For highlighting (\hl)
+\usepackage{soul}
+%% For margin notes
+\usepackage{todonotes}
+
+
+% Define Yu's custom branding color
+%% Yu likes green :)
+\definecolor{YuGreen}{named}{ForestGreen}
+
+% [1] Inline Comment: Standard feedback/remarks
+\newcommand{\yu}[1]{{\color{YuGreen}[\textbf{Yu:} #1]}}
+
+% [2] Addition: New text suggestions
+\newcommand{\yuAdd}[1]{\textcolor{YuGreen}{#1}}
+
+% [3] Deletion: Struck-through text
+\newcommand{\yuDelete}[1]{\textcolor{YuGreen!60}{\sout{#1}}}
+
+% [4] Highlight: Emphasize specific text (Note: soul might conflict with UTF-8)
+\newcommand{\yuHighlight}[1]{{%
+    \sethlcolor{YuGreen!20}%
+    \hl{#1}%
+}}
+
+% [5] Inline TODO: Catchy label for pending tasks
+\newcommand{\yuTodo}[1]{%
+    \fcolorbox{YuGreen}{YuGreen!10}{%
+        \small\sffamily\bfseries\color{YuGreen}TODO%
+    }\enspace\textcolor{YuGreen}{#1}%
+}
+
+% [6] Margin Note: Sticky-note style comments in the sidebar
+\newcommand{\yuNote}[1]{%
+    \todo[color=YuGreen!20, linecolor=YuGreen, size=\tiny]{Yu: #1}%
+}
+
