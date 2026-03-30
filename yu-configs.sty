@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{yu-configs}[
+    2026/03/01 v1.0 Universal Configs, Patches, and Macros
+]
+
+
+% ---- check lua environment ----
+\RequirePackage{ifluatex}
+
+\ifluatex
+    \typeout{yu-configs: LuaTeX detected, loading lua modules...}
+    % TODO: import yu_logic.lua
+\else
+    \typeout{yu-configs: yu-configs running without lua}
+\fi
+
+
+% ---- common packages ----
+\RequirePackage{xcolor}  % color processing
+
+
+
+% ---- yu macros ----
+
+
+\end{input}
+
