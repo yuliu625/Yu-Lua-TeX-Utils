@@ -38,9 +38,19 @@
 \newcommand{\yuTodo}[1]{%
     \fcolorbox{YuGreen}{YuGreen!10}{%
         \small\sffamily\bfseries\color{YuGreen}TODO%
-    }\enspace\textcolor{YuGreen}{#1}%
+        \enspace\normalfont\textcolor{YuGreen}{#1}%
+    }%
 }
-\newcommand{\yuNote}[1]{\todo[color=YuGreen!20, linecolor=YuGreen, size=\tiny]{Yu: #1}}
+\newcommand{\yuNote}[1]{%
+    \todo[
+        inline,
+        color=YuGreen!10,
+        linecolor=YuGreen,
+        size=\small
+    ]{%
+        \color{YuGreen!80!black}\textbf{Note: }#1
+    }%
+}
 
 
 \endinput
