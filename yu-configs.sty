@@ -1,8 +1,15 @@
-%% Source:
+%! Package =
+%! Source =
+%! Reference =
+%! Synopsis =
+%! Notes =
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{yu-configs}[
-    2026/03/01 v0.0.1 Yu's Custom Universal Configs, Patches, and Macros.
+\ProvidesPackage{yu-configs}[%
+    2026/03/01 v0.0.1 Yu's Custom Universal Configs, Patches, and Macros. %
 ]
+
+\ExplSyntaxOn
 
 
 % ---- Check: lua environment ----
@@ -31,26 +38,37 @@
 \RequirePackage{soul}
 \RequirePackage{todonotes}
 \definecolor{YuGreen}{named}{ForestGreen}
-\newcommand{\yu}[1]{{\color{YuGreen}[\textbf{Yu:} #1]}}
-\newcommand{\yuAdd}[1]{\textcolor{YuGreen}{#1}}
-\newcommand{\yuDelete}[1]{\textcolor{YuGreen!60}{\sout{#1}}}
-\newcommand{\yuHighlight}[1]{{\sethlcolor{YuGreen!20}\hl{#1}}}
-\newcommand{\yuTodo}[1]{%
+\NewDocumentCommand{\yu}{ m }{%
+    {\color{YuGreen}[\textbf{Yu:} #1]}%
+}
+\NewDocumentCommand{\yuAdd}{ m }{%
+    \textcolor{YuGreen}{#1}%
+}
+\NewDocumentCommand{\yuDelete}{ m }{%
+    \textcolor{YuGreen!60}{\protect\sout{#1}}%
+}
+\NewDocumentCommand{\yuHighlight}{ m }{%
+    {\sethlcolor{YuGreen!20}\hl{#1}}%
+}
+\NewDocumentCommand{\yuTodo}{ m }{%
     \fcolorbox{YuGreen}{YuGreen!10}{%
         \small\sffamily\bfseries\color{YuGreen}TODO%
         \enspace\normalfont\textcolor{YuGreen}{#1}%
     }%
 }
-\newcommand{\yuNote}[1]{%
-    \todo[
-        inline,
-        color=YuGreen!10,
-        linecolor=YuGreen,
-        size=\small
+\NewDocumentCommand{\yuNote}{ m }{%
+    \todo[%
+        inline,%
+        color=YuGreen!10,%
+        linecolor=YuGreen,%
+        size=\small,%
     ]{%
-        \color{YuGreen!80!black}\textbf{Note: }#1
+        \color{YuGreen!80!black}\textbf{Note: }#1%
     }%
 }
+
+
+\ExplSyntaxOff
 
 
 \endinput
