@@ -1,0 +1,18 @@
+% judge luatex environment
+
+
+\ExplSyntaxOn
+
+
+\sys_if_engine_luatex:T
+{
+    \typeout{yu-configs: LuaTeX detected, loading lua modules...}
+    % TODO: import yu_logic.lua
+}
+{
+    \typeout{yu-configs: yu-configs running without lua}
+}
+
+
+\ExplSyntaxOff
+
