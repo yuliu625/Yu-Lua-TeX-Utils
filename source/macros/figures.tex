@@ -1,19 +1,84 @@
 % yu for figures
 
-\NewDocumentCommand{\yuQuickInsertFigure}{ O{1} m o o }{
+
+% Load essential packages
+\RequirePackage{graphicx}
+\RequirePackage{expl3}
+
+
+%% Quick View
+\NewDocumentCommand{\yuQuickFigure}{ O{1} m o o }{%
     % #1: size
     % #2: path
     % #3: caption
     % #4: label
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=#1\textwidth]{#2}
-        \IfValueT{#3}{
-            \caption{#3}
-        }
-        \IfValueTF{#4}{
-            \label{#4}}{\label{fig:#2}
-        }
+    \begin{figure}[htbp]%
+        \centering%
+        \includegraphics[width=#1\textwidth]{#2}%
+        \IfValueT{#3}{%
+            \caption{#3}%
+        }%
+        \IfValueTF{#4}{%
+            \label{#4}%
+        }{%
+            \label{fig:#2}%
+        }%
     \end{figure}
+}
+%% Flexible Import
+\NewDocumentCommand{\yuFlexibleFigure}{ m o o }{%
+    % #1: include image
+    % #2: caption
+    % #3: label
+    \begin{figure}[htbp]%
+        \centering%
+        #1%
+        \IfValueT{#2}{%
+            \caption{#2}%
+        }%
+        \IfValueTF{#3}{%
+            \label{#3}%
+        }%
+    \end{figure}
+}
+%% Modern Method
+\keys_define:nn { yu_figure / modern_figure }
+{
+    % path
+    path .tl_set:N = \l_yu_figure_path_tl,
+    % width
+    width .tl_set:N = \l_yu_figure_width_tl,
+    width .initial:n = 0.8\linewidth,
+    % angle
+    angle .tl_set:N = \l_yu_figure_angle_tl,
+    angle .initial:n = 0,
+    % position
+    position .tl_set:N = \l_yu_figure_position_tl,
+    position .initial:n = htbp,
+    % caption
+    caption .tl_set:N = \l_yu_figure_caption_tl,
+    caption .initial:n = { (No-Caption) },
+    % label
+    label .tl_set:N = \l_yu_figure_label_tl,
+    label .initial:n = { },
+}
+\NewDocumentCommand{\yuModernFigure}{ m }
+{
+    \group_begin:
+
+    \keys_set:nn { yu_figure / modern_figure } { #1 }
+    \begin{figure}[\l_yu_figure_position_tl]
+        \centering
+        \includegraphics[
+            width=\l_yu_figure_width_tl,
+            angle=\l_yu_figure_angle_tl,
+        ]{\l_yu_figure_path_tl}
+        \caption{\l_yu_figure_caption_tl}
+        \tl_if_empty:NTF \l_yu_figure_label_tl
+            { \label{figure:\l_yu_figure_path_tl} }
+            { \label{figure:\l_yu_figure_label_tl} }
+    \end{figure}
+
+    \group_end:
 }
 
