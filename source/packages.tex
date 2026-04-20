@@ -1,5 +1,6 @@
 % ---- Yu's packages ----
-% Sequence fo package loading
+% Sequence of package loading
+
 
 %% Core Math & Fonts: amsmath, amssymb, fontenc, inputenc
 %% Load these first to establish the basic symbols and character encoding.
@@ -7,10 +8,14 @@
 
 %% General Utility & Layout: graphicx, xcolor, enumitem, booktabs, geometry
 %% These define how the page looks and how images/colors are handled.
+\input{packages/table}
+\input{packages/graph}
+\input{packages/algorithm}
+\input{packages/case_study}
 
 
 %% Reference Foundation: varioref
-%% If you use it, it must come \textbf{before} hyperref.
+%% If you use it, it must come before hyperref.
 
 
 %% The Interaction Core: hyperref
@@ -19,4 +24,5 @@
 
 %% Post-Hyperref Specialists: glossaries, autonum, cleveref
 %% These packages need to "wrap around" the links created by hyperref.
+\input{extensions/reference}
 
