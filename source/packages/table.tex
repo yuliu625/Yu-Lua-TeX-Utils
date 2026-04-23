@@ -1,8 +1,28 @@
-% tables
+% ---- Tables ----
 
 
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{longtable}
-\usepackage{ltablex}
+% Academic Standard
+\usepackage{booktabs}  % \toprule \midrule \bottomrule
+% Adds vertical padding and different line weights.
+
+
+% Width & Long Tables
+\usepackage{tabularx}  % \begin{tabularx}{\textwidth}{X}
+\usepackage{longtable}  % Tables that span multiple pages
+\usepackage{ltablex}  % Combines tabularx and longtable
+\usepackage{xltabular}  % The modern replacement for ltablex.
+
+
+% Cell Formatting
+\usepackage{multirow}   % \multirow{rows}{width}{text}
+\usepackage{makecell}   % \makecell{line1 \\ line2} and \thead
+
+
+% Numbers Alignment
+\usepackage{siunitx}  % S column for decimal alignment: \begin{tabular}{S}
+
+
+% Modern Suite
+\usepackage{tabularray} % The "all-in-one" replacement
+\UseTblrLibrary{booktabs, siunitx} % Integration libraries for tabularray
 
