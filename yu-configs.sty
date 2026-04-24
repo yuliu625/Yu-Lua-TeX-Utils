@@ -1,6 +1,6 @@
 %! Package = yu-configs
-%! Source = https://github.com/yuliu625/Yu-Lua-TeX-Utils
-%! Reference = https://github.com/yuliu625/Yu-Lua-TeX-Utils/source/
+%! Sources = https://github.com/yuliu625/Yu-Lua-TeX-Utils
+%! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/source/
 %! Synopsis = Yu's Custom Universal Configs, Patches, and Macros.
 %! Notes = A personalized LuaTeX utility suite for academic writing. Features automated patching, modular package presets, and Lua-driven macros optimized for Overleaf collaboration.
 %! Encoding = UTF-8
@@ -11,6 +11,11 @@
 \ProvidesPackage{yu-configs}[%
     2026/03/01 v0.0.1 Yu's Custom Universal Configs, Patches, and Macros. %
 ]
+
+
+% ---- LaTeX3 ----
+\RequirePackage{expl3}  % built-in after 2020
+\RequirePackage{xparse}  % built-in after 2020
 
 
 \ExplSyntaxOn
@@ -28,9 +33,6 @@
 
 
 % ---- Patches ----
-%% LaTeX3
-\RequirePackage{expl3}
-\RequirePackage{xparse}  % build-in after 2020
 %% Appendix: source/patches/appendix.tex
 \RequirePackage{appendix}
 
@@ -40,7 +42,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
 \RequirePackage{siunitx}
-%\RequirePackage{xltabular}  % More optional package can be seen in source/packages/table.tex .
+%\RequirePackage{xltabular}  % More optional packages can be seen in source/packages/table.tex .
 %% Graph: source/packages/graph.tex
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
