@@ -1,7 +1,7 @@
 %! Package = yu-configs
 %! Sources = https://github.com/yuliu625/Yu-Lua-TeX-Utils
-%! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/source/
-%! Synopsis = Yu's Custom Universal Configs, Patches, and Macros.
+%! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/blob/main/source/
+%! Synopsis = Yu's Custom Universal Patches, Configs and Macros.
 %! Notes = A personalized LuaTeX utility suite for academic writing. Features automated patching, modular package presets, and Lua-driven macros optimized for Overleaf collaboration.
 %! Encoding = UTF-8
 %! Program = lualatex
@@ -9,7 +9,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{yu-configs}[%
-    2026/03/01 v0.0.1 Yu's Custom Universal Configs, Patches, and Macros. %
+    2026/03/01 v0.0.1 Yu's Custom Universal Patches, Configs and Macros. %
 ]
 
 
@@ -33,19 +33,24 @@
 
 
 % ---- Patches ----
+%% Math: source/patches/math.tex
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+%% Table: source/patches/table.tex
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\RequirePackage{siunitx}
+%\RequirePackage{xltabular}  % More optional packages can be seen in source/packages/table.tex .
+%% Graph: source/patches/graph.tex
+\RequirePackage{graphicx}
+\RequirePackage{subcaption}
 %% Appendix: source/patches/appendix.tex
 \RequirePackage{appendix}
 
 
 % ---- Packages ----
-%% Table: source/packages/table.tex
-\RequirePackage{booktabs}
-\RequirePackage{tabularx}
-\RequirePackage{siunitx}
-%\RequirePackage{xltabular}  % More optional packages can be seen in source/packages/table.tex .
-%% Graph: source/packages/graph.tex
-\RequirePackage{graphicx}
-\RequirePackage{subcaption}
 %% Reference: source/extensions/reference.tex
 %\RequirePackage{cleveref}  % unstable
 %% Case Study: source/packages/case_study.tex
