@@ -4,12 +4,15 @@
 
 %% Core Math & Fonts: amsmath, amssymb, fontenc, inputenc
 %% Load these first to establish the basic symbols and character encoding.
+\input{patches/math}
 
 
 %% General Utility & Layout: graphicx, xcolor, enumitem, booktabs, geometry
 %% These define how the page looks and how images/colors are handled.
-\input{packages/table}
-\input{packages/graph}
+%%% Patches:
+\input{patches/table}
+\input{patches/graph}
+%%% Packages:
 \input{packages/algorithm}
 \input{packages/case_study}
 
