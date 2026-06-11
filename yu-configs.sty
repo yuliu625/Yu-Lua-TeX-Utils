@@ -1,6 +1,6 @@
 %! Package = yu-configs
 %! Sources = https://github.com/yuliu625/Yu-Lua-TeX-Utils
-%! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/blob/main/source/
+%! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/blob/main/src/
 %! Synopsis = Yu's Custom Universal Patches, Configs and Macros.
 %! Notes = A personalized LuaTeX utility suite for academic writing. Features automated patching, modular package presets, and Lua-driven macros optimized for Overleaf collaboration.
 %! Encoding = UTF-8
@@ -33,28 +33,28 @@
 
 
 % ---- Patches ----
-%% Math: source/patches/math.tex
+%% Math: src/patches/math.tex
 \RequirePackage{mathtools}
 \RequirePackage{amssymb}
 \RequirePackage{bm}
-%% Table: source/patches/table.tex
+%% Table: src/patches/table.tex
 \RequirePackage{booktabs}
-\RequirePackage{tabularx}
 \RequirePackage{multirow}
 \RequirePackage{siunitx}
-%\RequirePackage{xltabular}  % More optional packages can be seen in source/patches/table.tex .
-%% Graph: source/patches/graph.tex
+\RequirePackage{xltabular}  % tabular + tabularx + longtable + ltabular
+\RequirePackage{tabularray}  % Really slow.  % More optional packages can be seen in src/patches/table.tex .
+%% Graph: src/patches/graph.tex
 \RequirePackage{graphicx}
 \RequirePackage{svg}
 \RequirePackage{subcaption}
-%% Appendix: source/patches/appendix.tex
+%% Appendix: src/patches/appendix.tex
 \RequirePackage{appendix}
 
 
 % ---- Packages ----
-%% Reference: source/extensions/reference.tex
+%% Reference: src/extensions/reference.tex
 %\RequirePackage{cleveref}  % unstable
-%% Case Study: source/packages/case_study.tex
+%% Case Study: src/packages/case_study.tex
 \RequirePackage{listings}
 \lstset{%
 breaklines=true,%
@@ -62,18 +62,18 @@ basicstyle=\ttfamily,%
 columns=fullflexible,%
 }
 %\RequirePackage[breakable]{tcolorbox}
-%% Annotations: source/macros/annotations.tex
+%% Annotations: src/macros/annotations.tex
 \RequirePackage[dvipsnames, table]{xcolor}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{soul}
 \RequirePackage{todonotes}
 \RequirePackage{hyperref}
-%% Figures: source/macros/figures.tex
+%% Figures: src/macros/figures.tex
 %\RequirePackage{graphicx}
 
 
 % ---- Macros ----
-%% Annotations: source/macros/annotations.tex
+%% Annotations: src/macros/annotations.tex
 \definecolor{YuGreen}{named}{ForestGreen}
 \NewDocumentCommand{\yu}{ m }{%
     {\color{YuGreen}[\textbf{Yu:} #1]}%
@@ -103,7 +103,7 @@ columns=fullflexible,%
         \color{YuGreen!80!black}\textbf{Yu Note:} #1%
     }%
 }
-%% Figures: source/macros/figures.tex
+%% Figures: src/macros/figures.tex
 \NewDocumentCommand{\yuQuickFigure}{ O{1} m o o }{%
     % #1: size
     % #2: path
