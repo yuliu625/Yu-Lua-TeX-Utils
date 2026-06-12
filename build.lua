@@ -16,7 +16,7 @@ docfiles = {'docfiles/*.tex', 'README.md', 'README.zh-CN.md',}
 
 
 -- source files
--- -- source/  .dtx & .ins
+-- -- src/  .dtx & .ins
 sourcefiles = {}
 
 
