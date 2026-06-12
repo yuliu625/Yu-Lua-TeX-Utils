@@ -19,7 +19,7 @@ To adapt to Overleaf's file referencing mechanism, this project uses a **flat de
 
 ```bash
 .
-├── source/                # Source code (Modular development)
+├── src/                   # Source code (Modular development)
 │   ├── macros/            # Custom macro definitions (\yu... series)
 │   ├── patches/           # Compatibility patches for specific templates
 │   ├── packages/          # Pre-loading and configuration of common packages
@@ -62,14 +62,14 @@ Add the following line to the preamble of your `main.tex`:
 
 ## 💡 Functional Modules Reference
 
-You can inspect the logic directly in `yu-configs.sty` at the root, or browse the full modular source code in the `source/` directory.
+You can inspect the logic directly in `yu-configs.sty` at the root, or browse the full modular source code in the `src/` directory.
 
-| Module | Description | Source Path |
-| :--- | :--- | :--- |
-| **Patch** | Fixes bugs related to `appendix` or hyperref in specific journal templates | `source/patches/` |
-| **Packages** | Pre-loads common packages with unified default configurations | `source/packages/` |
-| **Macros** | Personal utility macros, prefixed with `\yu` to prevent conflicts | `source/macros/` |
-| **Logic** | Complex string manipulation or mathematical logic | `source/scripts/` |
+| Module | Description | Source Path     |
+| :--- | :--- |:----------------|
+| **Patch** | Fixes bugs related to `appendix` or hyperref in specific journal templates | `src/patches/`  |
+| **Packages** | Pre-loads common packages with unified default configurations | `src/packages/` |
+| **Macros** | Personal utility macros, prefixed with `\yu` to prevent conflicts | `src/macros/`   |
+| **Logic** | Complex string manipulation or mathematical logic | `src/scripts/`  |
 
 
 ## 🏗️ Local Development & Building
@@ -92,8 +92,8 @@ l3build clean
 
 ## 🔧 Maintenance Tips
 
-- **Adding Patches**: If you encounter a new template compatibility issue, create a new file under `source/patches/` and configure it in the main file.
-- **Lua Logic Syncing**: After modifying `source/scripts/`, ensure that the root `yu_logic.lua` is updated. For complex logic, always add corresponding test cases in `testfiles/` to prevent regressions.
-- **Build Reminder**: Before sharing with collaborators, run the build process to ensure all changes in `source/` are merged into the root `.sty` file. This prevents compilation failures on the collaborator's end due to missing components.
+- **Adding Patches**: If you encounter a new template compatibility issue, create a new file under `src/patches/` and configure it in the main file.
+- **Lua Logic Syncing**: After modifying `src/scripts/`, ensure that the root `yu_logic.lua` is updated. For complex logic, always add corresponding test cases in `testfiles/` to prevent regressions.
+- **Build Reminder**: Before sharing with collaborators, run the build process to ensure all changes in `src/` are merged into the root `.sty` file. This prevents compilation failures on the collaborator's end due to missing components.
 - **Version Control**: Keep the root distribution files consistent with the latest source code to ensure seamless use on Overleaf.
 
