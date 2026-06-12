@@ -69,7 +69,6 @@ columns=fullflexible,%
 \RequirePackage{todonotes}
 \RequirePackage{hyperref}
 %% Figures: src/macros/figures.tex
-%\RequirePackage{graphicx}
 
 
 % ---- Macros ----
@@ -118,7 +117,7 @@ columns=fullflexible,%
         \IfValueTF{#4}{%
             \label{#4}%
         }{%
-            \label{fig:#2}%
+            \label{fig-#2}%
         }%
     \end{figure}
 }
@@ -170,8 +169,8 @@ columns=fullflexible,%
         ]{\l_yu_figure_path_tl}
         \caption{\l_yu_figure_caption_tl}
         \tl_if_empty:NTF \l_yu_figure_label_tl
-            { \label{figure:\l_yu_figure_path_tl} }
-            { \label{figure:\l_yu_figure_label_tl} }
+            { \label{fig-\l_yu_figure_path_tl} }
+            { \label{fig-\l_yu_figure_label_tl} }
     \end{figure}
 
     \group_end:
