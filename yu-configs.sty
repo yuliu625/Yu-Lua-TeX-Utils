@@ -1,10 +1,10 @@
+%! Encoding = utf-8
+%! Program = lualatex
 %! Package = yu-configs
 %! Sources = https://github.com/yuliu625/Yu-Lua-TeX-Utils
 %! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/blob/main/src/
 %! Synopsis = Yu's Custom Universal Patches, Configs and Macros.
 %! Notes = A personalized LuaTeX utility suite for academic writing. Features automated patching, modular package presets, and Lua-driven macros optimized for Overleaf collaboration.
-%! Encoding = UTF-8
-%! Program = lualatex
 
 
 \NeedsTeXFormat{LaTeX2e}
@@ -52,8 +52,6 @@
 
 
 % ---- Packages ----
-%% Reference: src/extensions/reference.tex
-%\RequirePackage{cleveref}  % unstable
 %% Case Study: src/packages/case_study.tex
 \RequirePackage{listings}
 \lstset{%
@@ -69,6 +67,14 @@ columns=fullflexible,%
 \RequirePackage{todonotes}
 \RequirePackage{hyperref}
 %% Figures: src/macros/figures.tex
+
+
+% ---- Extensions ----
+%% Tables: src/extensions/tables.tex
+\RequirePackage{adjustbox}
+\RequirePackage{pdflscape}
+%% Reference: src/extensions/reference.tex
+%\RequirePackage{cleveref}  % unstable
 
 
 % ---- Macros ----
