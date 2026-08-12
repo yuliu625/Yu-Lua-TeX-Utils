@@ -27,20 +27,20 @@
 ├── testfiles/             # 回归测试用例
 ├── examples/              # 功能演示示例 (.tex)
 ├── build.lua              # l3build 构建配置
-├── yu-configs.sty         # 扁平化主宏包 (同步至 Overleaf)
+├── yu-setup.sty           # 扁平化主宏包 (同步至 Overleaf)
 └── yu_logic.lua           # 扁平化 Lua 模块 (同步至 Overleaf)
 ```
 
 
 ## 🚀 Overleaf 协作使用指南
 
-为了在 Overleaf 中最方便地使用，建议保持根目录的 `yu-configs.sty` 和 `yu_logic.lua` 为最新版本。
+为了在 Overleaf 中最方便地使用，建议保持根目录的 `yu-setup.sty` 和 `yu_logic.lua` 为最新版本。
 
 ### 1. 导入项目
 
 将根目录下的以下两个文件上传至 Overleaf 项目的**根目录**:
 
-- `yu-configs.sty`
+- `yu-setup.sty`
 - `yu_logic.lua`
 
 ### 2. 项目设置
@@ -52,17 +52,17 @@
 在 `main.tex` 的导言区添加:
 
 ```latex
-%%%%%%%%
-% ---- Yu's configs start ----
-\usepackage{yu-configs}
-% ---- Yu's configs end ----
-%%%%%%%%
+%%%%%%%%%%
+% ----- Yu's setup start -----
+\usepackage{yu-setup}
+% ----- Yu's setup end -----
+%%%%%%%%%%
 ```
 
 
 ## 💡 功能模块备忘
 
-你可以直接在根目录的 `yu-configs.sty` 中查看逻辑，或者访问本 GitHub 仓库查看完整的 `src/` 拆分源码。
+你可以直接在根目录的 `yu-setup.sty` 中查看逻辑，或者访问本 GitHub 仓库查看完整的 `src/` 拆分源码。
 
 | 模块 | 功能描述 | 源码路径            |
 | :--- | :--- |:----------------|
