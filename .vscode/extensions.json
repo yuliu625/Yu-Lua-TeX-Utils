@@ -1,0 +1,19 @@
+// Yu's Essential VS Code LaTeX Extension Recommendations
+{
+    "recommendations": [
+        // Core compilation & Overleaf synchronization support
+        "iamhyc.overleaf-workshop",
+        "james-yu.latex-workshop",
+        // File and resource path autocompletion
+        "ionutvmi.path-autocomplete",
+        // Spell, grammar, and academic style checking
+        "streetsidesoftware.code-spell-checker",
+        "ltex-plus.vscode-ltex-plus",
+    ],
+    "unwantedRecommendations": [
+        // Deprecated extensions that are no longer maintained or recommended
+        "nickfode.latex-formatter",
+        "neo-ltex.ltex",
+    ],
+}
+
