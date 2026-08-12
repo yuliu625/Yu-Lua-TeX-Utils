@@ -28,20 +28,20 @@ To adapt to Overleaf's file referencing mechanism, this project uses a **flat de
 ├── examples/              # Feature demonstrations (.tex)
 ├── build.lua              # l3build configuration
 ├── yu-setup.sty           # Flattened main package (Sync to Overleaf)
-└── yu_logic.lua           # Flattened Lua module (Sync to Overleaf)
+└── yu_utils.lua           # Flattened Lua module (Sync to Overleaf)
 ```
 
 
 ## 🚀 Overleaf Collaboration Guide
 
-For the best experience on Overleaf, ensure that `yu-setup.sty` and `yu_logic.lua` in the root directory are kept up to date.
+For the best experience on Overleaf, ensure that `yu-setup.sty` and `yu_utils.lua` in the root directory are kept up to date.
 
 ### 1. Import Files
 
 Upload the following two files from the root directory to your Overleaf project's **root folder**:
 
 - `yu-setup.sty`
-- `yu_logic.lua`
+- `yu_utils.lua`
 
 ### 2. Project Settings
 
@@ -93,7 +93,7 @@ l3build clean
 ## 🔧 Maintenance Tips
 
 - **Adding Patches**: If you encounter a new template compatibility issue, create a new file under `src/patches/` and configure it in the main file.
-- **Lua Logic Syncing**: After modifying `src/scripts/`, ensure that the root `yu_logic.lua` is updated. For complex logic, always add corresponding test cases in `testfiles/` to prevent regressions.
+- **Lua Logic Syncing**: After modifying `src/scripts/`, ensure that the root `yu_utils.lua` is updated. For complex logic, always add corresponding test cases in `testfiles/` to prevent regressions.
 - **Build Reminder**: Before sharing with collaborators, run the build process to ensure all changes in `src/` are merged into the root `.sty` file. This prevents compilation failures on the collaborator's end due to missing components.
 - **Version Control**: Keep the root distribution files consistent with the latest source code to ensure seamless use on Overleaf.
 
