@@ -1,0 +1,16 @@
+// Yu's VS Code LaTeX Project Settings 
+//// Overleaf sync setup
+{
+    // Compilation is handled remotely by Overleaf server.
+    // Disable local auto-build and auto-clean.
+    // LaTeX Workshop is restricted to editor utilities and language tools.
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.autoClean.run": "never",
+    // Hide error and warning popups locally to prevent distraction from remote build feedback.
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    // Code formatting configuration using 'tex-fmt' as the local formatter.
+    "latex-workshop.formatting.latex": "tex-fmt",
+    "latex-workshop.bibtex-format.trailingComma": true,
+}
+
