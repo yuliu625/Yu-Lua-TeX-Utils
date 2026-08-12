@@ -27,20 +27,20 @@ To adapt to Overleaf's file referencing mechanism, this project uses a **flat de
 ├── testfiles/             # Regression test cases
 ├── examples/              # Feature demonstrations (.tex)
 ├── build.lua              # l3build configuration
-├── yu-configs.sty         # Flattened main package (Sync to Overleaf)
+├── yu-setup.sty           # Flattened main package (Sync to Overleaf)
 └── yu_logic.lua           # Flattened Lua module (Sync to Overleaf)
 ```
 
 
 ## 🚀 Overleaf Collaboration Guide
 
-For the best experience on Overleaf, ensure that `yu-configs.sty` and `yu_logic.lua` in the root directory are kept up to date.
+For the best experience on Overleaf, ensure that `yu-setup.sty` and `yu_logic.lua` in the root directory are kept up to date.
 
 ### 1. Import Files
 
 Upload the following two files from the root directory to your Overleaf project's **root folder**:
 
-- `yu-configs.sty`
+- `yu-setup.sty`
 - `yu_logic.lua`
 
 ### 2. Project Settings
@@ -52,17 +52,17 @@ Since this package relies on Lua script logic, it is recommended to switch the *
 Add the following line to the preamble of your `main.tex`:
 
 ```latex
-%%%%%%%%
-% ---- Yu's configs start ----
-\usepackage{yu-configs}
-% ---- Yu's configs end ----
-%%%%%%%%
+%%%%%%%%%%
+% ----- Yu's setup start -----
+\usepackage{yu-setup}
+% ----- Yu's setup end -----
+%%%%%%%%%%
 ```
 
 
 ## 💡 Functional Modules Reference
 
-You can inspect the logic directly in `yu-configs.sty` at the root, or browse the full modular source code in the `src/` directory.
+You can inspect the logic directly in `yu-setup.sty` at the root, or browse the full modular source code in the `src/` directory.
 
 | Module | Description | Source Path     |
 | :--- | :--- |:----------------|
