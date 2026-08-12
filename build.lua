@@ -1,13 +1,13 @@
 -- build.lua basic configurations
 
 -- basic information
-module = 'yu-configs'
-pkgname = 'yu-configs'
+module = 'yu-setup'
+pkgname = 'yu-setup'
 
 
 -- package codes
 -- -- TDS: tex/latex/
-installfiles = {'yu-configs.sty', 'yu_logic.lua',}
+installfiles = {'yu-setup.sty', 'yu_logic.lua',}
 
 
 -- document files
