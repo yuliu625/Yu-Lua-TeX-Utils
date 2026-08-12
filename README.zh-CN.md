@@ -28,20 +28,20 @@
 ├── examples/              # 功能演示示例 (.tex)
 ├── build.lua              # l3build 构建配置
 ├── yu-setup.sty           # 扁平化主宏包 (同步至 Overleaf)
-└── yu_logic.lua           # 扁平化 Lua 模块 (同步至 Overleaf)
+└── yu_utils.lua           # 扁平化 Lua 模块 (同步至 Overleaf)
 ```
 
 
 ## 🚀 Overleaf 协作使用指南
 
-为了在 Overleaf 中最方便地使用，建议保持根目录的 `yu-setup.sty` 和 `yu_logic.lua` 为最新版本。
+为了在 Overleaf 中最方便地使用，建议保持根目录的 `yu-setup.sty` 和 `yu_utils.lua` 为最新版本。
 
 ### 1. 导入项目
 
 将根目录下的以下两个文件上传至 Overleaf 项目的**根目录**:
 
 - `yu-setup.sty`
-- `yu_logic.lua`
+- `yu_utils.lua`
 
 ### 2. 项目设置
 
@@ -93,7 +93,7 @@ l3build clean
 ## 🔧 常见维护操作
 
 - **新增补丁**: 若遇到新的模板兼容性问题，在 `src/patches/` 下创建新文件，并在主文件中按需配置。
-- **Lua 逻辑同步**: 修改 `src/scripts/` 后，需同步更新根目录的 `yu_logic.lua`。对于复杂的逻辑，务必在 `testfiles/` 中增加对应的测试用例以防迭代时出错。
+- **Lua 逻辑同步**: 修改 `src/scripts/` 后，需同步更新根目录的 `yu_utils.lua`。对于复杂的逻辑，务必在 `testfiles/` 中增加对应的测试用例以防迭代时出错。
 - **构建提醒**: 在分发给他人协作项目前，务必运行构建流程确保 `src/` 中的改动已完全合并至根目录的 `.sty` 文件中，避免协作方因缺少组件导致编译失败。
 - **版本管理**: 保持根目录产物与最新源码的一致性，确保 Overleaf 端能直接使用。
 
