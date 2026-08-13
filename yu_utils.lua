@@ -1,2 +1,16 @@
--- lua scripts
+--- 
+--- @file yu_utils.lua
+--- @module yu_utils
+--- @summary Yu's LuaTeX Utility Suite for Academic Writing.
+--- 
+--- @description
+--- This module serves as a Lua extension reserve for LaTeX package files.
+--- Since most academic publishers still strictly enforce pdfLaTeX workflows, this tool currently remains in a standby state to preserve future extensibility.
+--- For daily writing, using Quarto and Typst is generally a better practice.
+--- 
+--- @author Yu
+--- @license LPPL 1.3c
+--- @version 0.0.1
+--- @copyright 2026 Yu
+--- @see https://github.com/yuliu625/Yu-Lua-TeX-Utils
 
