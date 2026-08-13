@@ -1,10 +1,15 @@
+%! TEX encoding = UTF-8 Unicode
+%! TEX program = pdflatex
+%! 
 %! Encoding = utf-8
-%! Program = lualatex
+%! Program = pdflatex, lualatex, xelatex
 %! Package = yu-setup
+%! Author = Yu
+%! License = LPPL 1.3c
 %! Sources = https://github.com/yuliu625/Yu-Lua-TeX-Utils
 %! References = https://github.com/yuliu625/Yu-Lua-TeX-Utils/blob/main/src/
-%! Synopsis = Yu's Custom Universal Patches, Configs and Macros.
-%! Notes = A personalized LuaTeX utility suite for academic writing. Features automated patching, modular package presets, and Lua-driven macros optimized for Overleaf collaboration.
+%! Synopsis = Yu's Custom Universal Patches, Configs and Macros for Academic Writing.
+%! Notes = Yu's personalized LuaTeX utility suite for academic writing. Features automated patching, modular package presets, and Lua-driven macros optimized for Overleaf collaboration.
 
 
 \NeedsTeXFormat{LaTeX2e}
@@ -13,7 +18,7 @@
 ]
 
 
-% ---- LaTeX3 ----
+% ----- LaTeX3 -----
 \RequirePackage{expl3}  % built-in after 2020
 \RequirePackage{xparse}  % built-in after 2020
 
@@ -21,18 +26,30 @@
 \ExplSyntaxOn
 
 
-% ---- Check: lua environment ----
-\RequirePackage{ifluatex}
-% \RequirePackage{iftex}
-\ifluatex
-    \typeout{yu-setup: LuaTeX detected, loading lua modules...}
-    % TODO: import yu_utils.lua
+% ----- Check: LaTeX Engine -----
+\RequirePackage{iftex}  % standard in latex3, or use expl3
+\ifLuaTeX
+    % Primary target engine for this package
+    \PackageInfo{yu-setup}{Engine detected: LuaLaTeX}
+    % TODO: Import external Lua utility library (yu_utils.lua)
 \else
-    \typeout{yu-setup: yu-setup running without lua}
+    \ifpdfTeX
+        % Commonly used by academic publishers
+        % Compatibility is required
+        \PackageInfo{yu-setup}{Engine detected: pdfLaTeX}
+    \else
+        \ifXeTeX
+            \PackageInfo{yu-setup}{Engine detected: XeLaTeX}
+        \else
+            % Unsupported or unknown engine
+            \PackageError{yu-setup}{Unsupported engine!}%
+                {This package currently only supports LuaLaTeX, pdfLaTeX and XeLaTeX .}
+        \fi
+    \fi
 \fi
 
 
-% ---- Patches ----
+% ----- Patches -----
 %% Math: src/patches/math.tex
 \RequirePackage{mathtools}
 \RequirePackage{amssymb}
@@ -51,7 +68,7 @@
 \RequirePackage{appendix}
 
 
-% ---- Packages ----
+% ----- Packages -----
 %% Case Study: src/packages/case_study.tex
 \RequirePackage{listings}
 \lstset{%
@@ -69,15 +86,15 @@ columns=fullflexible,%
 %% Figures: src/macros/figures.tex
 
 
-% ---- Extensions ----
+% ----- Extensions -----
 %% Tables: src/extensions/tables.tex
 \RequirePackage{adjustbox}
 \RequirePackage{pdflscape}
 %% Reference: src/extensions/reference.tex
-%\RequirePackage{cleveref}  % unstable
+% \RequirePackage{cleveref}  % unstable
 
 
-% ---- Macros ----
+% ----- Macros -----
 %% Annotations: src/macros/annotations.tex
 \definecolor{YuGreen}{named}{ForestGreen}
 \NewDocumentCommand{\yu}{ m }{%
