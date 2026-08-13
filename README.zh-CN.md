@@ -53,9 +53,9 @@
 
 ```latex
 %%%%%%%%%%
-% ----- Yu's setup start -----
+% ----- Yu's Setup Start -----
 \usepackage{yu-setup}
-% ----- Yu's setup end -----
+% ----- Yu's Setup End -----
 %%%%%%%%%%
 ```
 
