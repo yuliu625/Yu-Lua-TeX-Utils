@@ -29,17 +29,22 @@
 % ----- Check: LaTeX Engine -----
 \RequirePackage{iftex}  % standard in latex3, or use expl3
 \ifLuaTeX
-    % Primary target engine for this package
-    \PackageInfo{yu-setup}{Engine detected: LuaLaTeX}
-    % TODO: Import external Lua utility library (yu_utils.lua)
+    % Primary target engine for this packageß
+    \PackageInfo{yu-setup}{Engine detected: LuaLaTeX}%
+    % Import external Lua utility library
+    \directlua{
+        -- Import yu_utils.lua module
+        yu_lua_utils = require("yu_utils")
+    }
+    % If running LuaLaTeX without yu_utils.lua available, Lua will raise a fatal error on require, halting compilation automatically.
 \else
     \ifpdfTeX
         % Commonly used by academic publishers
         % Compatibility is required
-        \PackageInfo{yu-setup}{Engine detected: pdfLaTeX}
+        \PackageInfo{yu-setup}{Engine detected: pdfLaTeX}%
     \else
         \ifXeTeX
-            \PackageInfo{yu-setup}{Engine detected: XeLaTeX}
+            \PackageInfo{yu-setup}{Engine detected: XeLaTeX}%
         \else
             % Unsupported or unknown engine
             \PackageError{yu-setup}{Unsupported engine!}%
