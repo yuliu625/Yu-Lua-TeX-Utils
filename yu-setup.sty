@@ -29,14 +29,14 @@
 % ----- Check: LaTeX Engine -----
 \RequirePackage{iftex}  % standard in latex3, or use expl3
 \ifLuaTeX
-    % Primary target engine for this packageß
+    % Primary target engine for this package
     \PackageInfo{yu-setup}{Engine detected: LuaLaTeX}%
     % Import external Lua utility library
     \directlua{
         -- Import yu_utils.lua module
         yu_lua_utils = require("yu_utils")
     }
-    % If running LuaLaTeX without yu_utils.lua available, Lua will raise a fatal error on require, halting compilation automatically.
+    % If running LuaLaTeX without `yu_utils.lua` available, Lua will raise a fatal error on require, halting compilation automatically.
 \else
     \ifpdfTeX
         % Commonly used by academic publishers
@@ -64,7 +64,7 @@
 \RequirePackage{multirow}
 \RequirePackage{siunitx}
 \RequirePackage{xltabular}  % tabular + tabularx + longtable + ltabular
-\RequirePackage{tabularray}  % Really slow.  % More optional packages can be seen in src/patches/table.tex .
+\RequirePackage{tabularray}  % All in one.  % More optional packages can be seen in src/patches/table.tex .
 %% Graph: src/patches/graph.tex
 \RequirePackage{graphicx}
 \RequirePackage{svg}
