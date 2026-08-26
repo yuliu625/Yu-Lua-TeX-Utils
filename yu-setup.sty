@@ -38,7 +38,7 @@
     }
     % If running LuaLaTeX without `yu_utils.lua` available, Lua will raise a fatal error on require, halting compilation automatically.
 \else
-    \ifpdfTeX
+    \ifPDFTeX
         % Commonly used by academic publishers
         % Compatibility is required
         \PackageInfo{yu-setup}{Engine detected: pdfLaTeX}%
